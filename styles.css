@@ -14,11 +14,11 @@ h1 {
 }
 
 h1,
-.frame {
+#frame {
   justify-self: center;
 }
 
-.frame {
+#frame {
   align-self: center;
   max-width: 100%;
 }
@@ -31,10 +31,10 @@ h1,
   align-self: center;
 }
 
-.btn-right {
+#btn-right {
   justify-self: start;
 }
 
-.btn-left {
+#btn-left {
   justify-self: end;
 }
