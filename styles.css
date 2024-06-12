@@ -1,0 +1,40 @@
+.container {
+  display: grid;
+  grid-template-columns: auto max-content auto;
+  grid-template-rows: auto 1fr;
+  gap: 0;
+}
+
+.btn {
+  background-color: blue;
+}
+
+h1 {
+  grid-column: span 3;
+}
+
+h1,
+.frame {
+  justify-self: center;
+}
+
+.frame {
+  align-self: center;
+  max-width: 100%;
+}
+
+.btn {
+  width: 10em;
+  height: 10em;
+  margin: 0;
+  padding: 0;
+  align-self: center;
+}
+
+.btn-right {
+  justify-self: start;
+}
+
+.btn-left {
+  justify-self: end;
+}
