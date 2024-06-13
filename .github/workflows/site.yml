@@ -1,17 +1,28 @@
+It looks like the indentation in the steps section is incorrect. Each step should be indented properly to be recognized as part of the steps sequence.
+
+Here is the corrected workflow file with proper indentation:
+
+yaml
+
 name: Run Python Script on Push to Source Folder
 
 on:
   push:
     paths:
-      - "source/**"
+      - 'source/**'
 
 jobs:
   run-python-script:
     runs-on: ubuntu-latest
 
     steps:
-  - uses: actions/checkout@v4
-  - uses: actions/setup-python@v5
-    with:
-      python-version: "3.12"
-  - run: python countImages.py
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run Python Script
+        run: python source/countImages.py  
