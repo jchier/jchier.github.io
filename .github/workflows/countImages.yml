@@ -24,7 +24,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run the Python Script countImages.py
         run: python countImages.py
-      
+
       - name: Configure Git
         run: |
           git config --global user.name 'github-actions[bot]'
@@ -39,3 +39,4 @@ jobs:
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
