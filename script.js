@@ -5,7 +5,7 @@ function nextImage() {
   if (current < count) {
     current++;
     let frame = document.getElementById("frame");
-    frame.src = "/source/" + current + ".png";
+    frame.src = "./source/" + current + ".PNG";
     frame.setAttribute("alt", "lol");
     console.log(current);
   }
