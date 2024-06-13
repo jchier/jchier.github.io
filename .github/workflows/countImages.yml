@@ -24,4 +24,18 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run the Python Script countImages.py
         run: python countImages.py
+      
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
+      - name: Commit changes
+        run: |
+          git add count.txt
+          git commit -m "Update image count"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
