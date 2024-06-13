@@ -1,4 +1,4 @@
-let imageSource = "/source/1-1.jpg";
+let imageSource = "/source/1-0.png";
 let countSource = ".count.txt";
 let count = 0;
 let current = 1;
@@ -7,7 +7,7 @@ function nextImage() {
   if (current < count) {
     current++;
     let frame = document.getElementById("frame");
-    frame.src = "/source/1-" + current + ".jpg";
+    frame.src = "/source/" + current + ".png";
     frame.setAttribute("alt", "lol");
     console.log(current);
   }
@@ -17,7 +17,7 @@ function previousImage() {
   if (current != 1) {
     current--;
     let frame = document.getElementById("frame");
-    frame.src = "/source/1-" + current + ".jpg";
+    frame.src = "/source/" + current + ".png";
     frame.setAttribute("alt", "lol");
     console.log(current);
   }
