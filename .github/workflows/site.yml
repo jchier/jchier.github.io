@@ -1,33 +1,27 @@
+name: Run Python Script on Push to Source Folder
+
 on:
   push:
     paths:
-      - "source/**" # Trigger the workflow when files in the source directory are changed
+      - "source/**"
 
 jobs:
-  update-image-data:
+  run-python-script:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          node-version: "16"
+          python-version: "3.x" # Specify the version of Python you want to use
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run the image count script
-        run: node countImages.js
-
-      - name: Commit and push changes
+      - name: Install Dependencies
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add imageData.json
-          git commit -m 'Update image data'
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt  # If you have a requirements file
+
+      - name: Run Python Script
+        run: python source/your_script.py

@@ -1,5 +1,5 @@
 let imageSource = "/source/1-1.jpg";
-let countSource = ".index.txt";
+let countSource = ".count.txt";
 let count = 0;
 let current = 1;
 
@@ -37,17 +37,14 @@ btnLeft.addEventListener("click", () => {
 
 async function fetchTextFile() {
   try {
-    // Replace 'https://example.com/path/to/yourfile.txt' with the URL of your remote .txt file
-    const response = await fetch("https://jchier.github.io/input.txt");
+    const response = await fetch("https://jchier.github.io/count.txt");
 
     if (!response.ok) {
       throw new Error("Network response was not ok " + response.statusText);
     }
 
-    // Get the text content from the response
     count = await response.text();
 
-    // Display the content in the HTML element
     console.log(count);
   } catch (error) {
     console.error("Error fetching the text file:", error);
