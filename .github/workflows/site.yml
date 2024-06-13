@@ -1,15 +1,9 @@
-It looks like the indentation in the steps section is incorrect. Each step should be indented properly to be recognized as part of the steps sequence.
-
-Here is the corrected workflow file with proper indentation:
-
-yaml
-
 name: Run Python Script on Push to Source Folder
 
 on:
   push:
     paths:
-      - 'source/**'
+      - "source/**"
 
 jobs:
   run-python-script:
@@ -22,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: "3.12"
 
-      - name: Run Python Script
-        run: python source/countImages.py  
+      - name: Run the Python Script countImages.py
+        run: python countImages.py
