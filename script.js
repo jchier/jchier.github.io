@@ -1,4 +1,5 @@
 let imageSource = "/source/1-1.jpg";
+let countSource = ".index.txt";
 
 function loadImages(imgArr) {
   let img = new Image();
@@ -13,9 +14,23 @@ btnRight.addEventListener("click", () => {
   loadImages();
 });
 
-const fs = require("fs");
-const dir = "./directory";
+async function fetchTextFile() {
+  try {
+    // Replace 'https://example.com/path/to/yourfile.txt' with the URL of your remote .txt file
+    const response = await fetch("https://example.com/path/to/yourfile.txt");
 
-fs.readdir(dir, (err, files) => {
-  console.log(files.length);
-});
+    if (!response.ok) {
+      throw new Error("Network response was not ok " + response.statusText);
+    }
+
+    // Get the text content from the response
+    const data = await response.text();
+
+    // Display the content in the HTML element
+    console.log(data);
+  } catch (error) {
+    console.error("Error fetching the text file:", error);
+  }
+}
+
+fetchTextFile();
