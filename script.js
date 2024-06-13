@@ -15,7 +15,7 @@ function previousImage() {
   if (current != 1) {
     current--;
     let frame = document.getElementById("frame");
-    frame.src = "/source/" + current + ".png";
+    frame.src = "./source/" + current + ".PNG";
     frame.setAttribute("alt", "lol");
     console.log(current);
   }
