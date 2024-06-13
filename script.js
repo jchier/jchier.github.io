@@ -1,5 +1,3 @@
-let imageSource = "/source/1-0.png";
-let countSource = ".count.txt";
 let count = 0;
 let current = 1;
 
@@ -52,3 +50,4 @@ async function fetchTextFile() {
 }
 
 fetchTextFile();
+console.log(count);
