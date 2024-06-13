@@ -1,8 +1,8 @@
 let count = 0;
-let current = 1;
+let current = 0;
 
 function nextImage() {
-  if (current < count) {
+  if (current < count - 1) {
     current++;
     let frame = document.getElementById("frame");
     frame.src = "./source/" + current + ".png";
@@ -12,7 +12,7 @@ function nextImage() {
 }
 
 function previousImage() {
-  if (current != 1) {
+  if (current != 0) {
     current--;
     let frame = document.getElementById("frame");
     frame.src = "./source/" + current + ".png";
