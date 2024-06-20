@@ -2,6 +2,7 @@ let count = 0;
 let current = 0;
 
 function nextImage() {
+  hideButton();
   if (current < count - 1) {
     current++;
     let frame = document.getElementById("frame");
@@ -49,5 +50,13 @@ async function fetchTextFile() {
   }
 }
 
+function hideButton() {
+  const btnLeft = document.getElementById("btn-left");
+  if (current === 0) {
+    btnLeft.style.display = "none";
+  } else {
+    btnLeft.style.display = "inline-block";
+  }
+}
+
 fetchTextFile();
-console.log(count);
