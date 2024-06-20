@@ -2,13 +2,13 @@ let count = 0;
 let current = 0;
 
 function nextImage() {
-  hideButton();
   if (current < count - 1) {
     current++;
     let frame = document.getElementById("frame");
     frame.src = "./source/" + current + ".png";
     frame.setAttribute("alt", "lol");
     console.log(current);
+    hideButton();
   }
 }
 
@@ -19,16 +19,17 @@ function previousImage() {
     frame.src = "./source/" + current + ".png";
     frame.setAttribute("alt", "lol");
     console.log(current);
+    hideButton();
   }
 }
 
-let btnRight = document.getElementById("btn-right");
+let btnRight = document.getElementById("increment");
 btnRight.addEventListener("click", () => {
   //loadImages();
   nextImage();
 });
 
-let btnLeft = document.getElementById("btn-left");
+let btnLeft = document.getElementById("decrement");
 btnLeft.addEventListener("click", () => {
   //loadImages();
   previousImage();
@@ -51,12 +52,13 @@ async function fetchTextFile() {
 }
 
 function hideButton() {
-  const btnLeft = document.getElementById("btn-left");
+  const btnLeft = document.getElementById("decrement");
   if (current === 0) {
-    btnLeft.style.display = "none";
+    btnLeft.style.visibility = "hidden";
   } else {
-    btnLeft.style.display = "inline-block";
+    btnLeft.style.visibility = "visible";
   }
 }
 
 fetchTextFile();
+hideButton();

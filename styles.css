@@ -14,10 +14,6 @@ h1,
   justify-self: center;
 }
 
-#frame {
-  margin: 1em;
-}
-
 .frame-container {
   background-color: black;
   display: flex;
@@ -41,20 +37,12 @@ h1,
   align-self: center;
 }
 
-/* #btn-right {
-  justify-self: start;
-}
-
-#btn-left {
-  justify-self: end;
-} */
-
 @media screen and (max-width: 480px) {
   .frame-container {
     margin: 1em auto;
   }
 
-  #btn-left {
+  .btn-left {
     margin-right: 0px;
   }
 
@@ -82,5 +70,25 @@ h1,
 
   .btn {
     width: 10em;
+  }
+
+  #frame {
+    margin: 1em;
+  }
+
+  #prev-chap {
+    order: 0;
+  }
+
+  #decrement {
+    order: 1;
+  }
+
+  #increment {
+    order: 2;
+  }
+
+  #next-chapt {
+    order: 3;
   }
 }
