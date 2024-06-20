@@ -14,10 +14,9 @@ h1,
   justify-self: center;
 }
 
-/* #frame {
-  max-width: 80%;
-  height: auto;
-} */
+#frame {
+  margin: 1em;
+}
 
 .frame-container {
   background-color: black;
