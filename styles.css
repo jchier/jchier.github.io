@@ -63,7 +63,8 @@ h1,
   }
 
   #frame {
-    max-width: 90%;
+    max-width: 80%;
+    height: auto;
   }
 
   .btn-container {
