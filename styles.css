@@ -3,11 +3,10 @@
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;
   gap: 1em;
-  width: max-content;
   height: max-content;
   margin: auto;
   margin-top: 2%;
-  margin-bottom: 2%;
+  margin-bottom: 2em;
 }
 
 h1,
@@ -15,29 +14,29 @@ h1,
   justify-self: center;
 }
 
-#frame {
-  max-width: 80%; /* Adjust max width to fit proportionally */
-  height: auto; /* Maintain aspect ratio */
-}
+/* #frame {
+  max-width: 80%;
+  height: auto;
+} */
 
 .frame-container {
   background-color: black;
   display: flex;
   justify-content: center;
-  margin: 1em auto;
-  border-radius: 1em; /* Center with margin and provide some spacing */
+
+  border-radius: 1em;
 }
 
 .btn-container {
   display: flex;
-  justify-content: center; /* Space buttons evenly */
+  justify-content: center;
 }
 
 .btn {
   background-color: blue;
-  width: 30vw; /* Use viewport width for responsive button size */
-  height: 30vw; /* Use viewport width for responsive button size */
-  margin: 0.5em; /* Add margin for spacing between buttons */
+  width: 10em;
+  height: 10em;
+  margin: 0.5em;
   margin-top: 0px;
   padding: 0.5em;
   align-self: center;
@@ -49,4 +48,29 @@ h1,
 
 #btn-left {
   justify-self: start;
+}
+
+@media screen and (max-width: 480px) {
+  .frame-container {
+    margin: 1em auto;
+  }
+
+  .btn {
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .myContainer {
+    margin-bottom: 2%;
+  }
+
+  #frame {
+    max-width: 90%;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .myContainer {
+    width: max-content;
+  }
 }
