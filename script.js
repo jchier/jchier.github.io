@@ -1,39 +1,73 @@
 let count = 0;
 let current = 0;
+const bootBlue = "#0d6efd";
+const frame = document.getElementById("frame");
+const btnDec = document.getElementById("decrement");
+const btnInc = document.getElementById("increment");
+const btnNext = document.getElementById("next-chapt");
+const btnPrev = document.getElementById("prev-chapt");
+
+let chapterMarks = [0, 64, 127];
 
 function nextImage() {
   if (current < count - 1) {
     current++;
-    let frame = document.getElementById("frame");
-    frame.src = "./source/" + current + ".png";
-    frame.setAttribute("alt", "lol");
-    console.log(current);
-    hideButton();
+    setFrame();
   }
 }
 
 function previousImage() {
   if (current != 0) {
     current--;
-    let frame = document.getElementById("frame");
-    frame.src = "./source/" + current + ".png";
-    frame.setAttribute("alt", "lol");
-    console.log(current);
-    hideButton();
+    setFrame();
   }
 }
 
-let btnRight = document.getElementById("increment");
-btnRight.addEventListener("click", () => {
-  //loadImages();
+function nextChapter() {
+  for (let i of chapterMarks) {
+    if (current < i) {
+      current = i;
+      setFrame();
+      return;
+    }
+  }
+}
+
+function prevChapter() {
+  for (let i = chapterMarks.length - 1; i >= 0; i--) {
+    if (current > chapterMarks[i]) {
+      current = chapterMarks[i];
+      setFrame();
+      return;
+    }
+  }
+}
+
+btnInc.addEventListener("click", () => {
   nextImage();
+  hideButton();
 });
 
-let btnLeft = document.getElementById("decrement");
-btnLeft.addEventListener("click", () => {
-  //loadImages();
+btnDec.addEventListener("click", () => {
   previousImage();
+  hideButton();
 });
+
+btnNext.addEventListener("click", () => {
+  nextChapter();
+  hideButton();
+});
+
+btnPrev.addEventListener("click", () => {
+  prevChapter();
+  hideButton();
+});
+
+function setFrame() {
+  frame.src = "./source/" + current + ".png";
+  frame.setAttribute("alt", "lol");
+  console.log(current);
+}
 
 async function fetchTextFile() {
   try {
@@ -52,11 +86,13 @@ async function fetchTextFile() {
 }
 
 function hideButton() {
-  const btnLeft = document.getElementById("decrement");
   if (current === 0) {
-    btnLeft.style.visibility = "hidden";
+    btnDec.style.backgroundColor = "grey";
+  } else if (current === count - 1) {
+    btnInc.style.backgroundColor = "grey";
   } else {
-    btnLeft.style.visibility = "visible";
+    btnDec.style.backgroundColor = bootBlue;
+    btnInc.style.backgroundColor = bootBlue;
   }
 }
 
