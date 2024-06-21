@@ -28,6 +28,7 @@ function nextChapter() {
     if (current < i) {
       current = i;
       setFrame();
+
       return;
     }
   }
@@ -45,22 +46,22 @@ function prevChapter() {
 
 btnInc.addEventListener("click", () => {
   nextImage();
-  hideButton();
+  greyButton();
 });
 
 btnDec.addEventListener("click", () => {
   previousImage();
-  hideButton();
+  greyButton();
 });
 
 btnNext.addEventListener("click", () => {
   nextChapter();
-  hideButton();
+  greyButton();
 });
 
 btnPrev.addEventListener("click", () => {
   prevChapter();
-  hideButton();
+  greyButton();
 });
 
 function setFrame() {
@@ -85,16 +86,30 @@ async function fetchTextFile() {
   }
 }
 
-function hideButton() {
+function greyButton() {
   if (current === 0) {
-    btnDec.style.backgroundColor = "grey";
+    btnDec.classList.add("grey");
+    btnPrev.classList.add("grey");
   } else if (current === count - 1) {
-    btnInc.style.backgroundColor = "grey";
+    btnInc.classList.add("grey");
   } else {
-    btnDec.style.backgroundColor = bootBlue;
-    btnInc.style.backgroundColor = bootBlue;
+    btnDec.classList.remove("grey");
+    btnInc.classList.remove("grey");
+    btnPrev.classList.remove("grey");
   }
+
+  if (current <= count && current >= chapterMarks[chapterMarks.length - 1]) {
+    btnNext.classList.add("grey");
+  } else {
+    btnNext.classList.remove("grey");
+  }
+
+  // if (current >= chapterMarks[0] && current < chapterMarks[1]) {
+  //   btnPrev.classList.add("grey");
+  // } else {
+  //   btnPrev.classList.remove("grey");
+  // }
 }
 
 fetchTextFile();
-hideButton();
+greyButton();

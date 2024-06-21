@@ -37,6 +37,10 @@ h1,
   align-self: center;
 }
 
+.btn-container .btn.grey {
+  background-color: grey;
+}
+
 @media screen and (max-width: 480px) {
   .frame-container {
     margin: 1em auto;
