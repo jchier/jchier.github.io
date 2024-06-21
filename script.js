@@ -87,28 +87,30 @@ async function fetchTextFile() {
 }
 
 function greyButton() {
-  if (current === 0) {
-    btnDec.classList.add("grey");
-    btnPrev.classList.add("grey");
-  } else if (current === count - 1) {
-    btnInc.classList.add("grey");
+  const isFirstImage = current === 0;
+  const isLastImage = current === count - 1;
+  const isBeyondChapter =
+    current <= count && current >= chapterMarks[chapterMarks.length - 1];
+
+  if (isFirstImage) {
+    if (!btnDec.classList.contains("grey")) btnDec.classList.add("grey");
+    if (!btnPrev.classList.contains("grey")) btnPrev.classList.add("grey");
   } else {
-    btnDec.classList.remove("grey");
-    btnInc.classList.remove("grey");
-    btnPrev.classList.remove("grey");
+    if (btnDec.classList.contains("grey")) btnDec.classList.remove("grey");
+    if (btnPrev.classList.contains("grey")) btnPrev.classList.remove("grey");
   }
 
-  if (current <= count && current >= chapterMarks[chapterMarks.length - 1]) {
-    btnNext.classList.add("grey");
+  if (isLastImage) {
+    if (!btnInc.classList.contains("grey")) btnInc.classList.add("grey");
   } else {
-    btnNext.classList.remove("grey");
+    if (btnInc.classList.contains("grey")) btnInc.classList.remove("grey");
   }
 
-  // if (current >= chapterMarks[0] && current < chapterMarks[1]) {
-  //   btnPrev.classList.add("grey");
-  // } else {
-  //   btnPrev.classList.remove("grey");
-  // }
+  if (isBeyondChapter) {
+    if (!btnNext.classList.contains("grey")) btnNext.classList.add("grey");
+  } else {
+    if (btnNext.classList.contains("grey")) btnNext.classList.remove("grey");
+  }
 }
 
 fetchTextFile();
