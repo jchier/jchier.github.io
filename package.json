@@ -1,0 +1,13 @@
+{
+  "name": "jchier.github.io",
+  "version": "1.0.0",
+  "description": "a web page with a scrolling comic that is viewed one square at a time.\r The app will update automaticall when new images get added to the\r source folder. Alt text from the images is grabbed from a text file.\r When scrolling through the comic, there is an animating scroll effect.",
+  "main": "countImages.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node script.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,5 +1,6 @@
 let count = 0;
 let current = 0;
+let isImageLoaded = false;
 const bootBlue = "#0d6efd";
 const frame = document.getElementById("frame");
 const btnDec = document.getElementById("decrement");
@@ -10,17 +11,23 @@ const btnPrev = document.getElementById("prev-chapt");
 let chapterMarks = [0, 64, 127];
 
 function nextImage() {
-  if (current < count - 1) {
-    current++;
-    setFrame();
-  }
+  return new Promise((resolve) => {
+    if (current < count - 1) {
+      current++;
+      frame.onload = resolve;
+      setFrame();
+    }
+  });
 }
 
 function previousImage() {
-  if (current != 0) {
-    current--;
-    setFrame();
-  }
+  return new Promise((resolve) => {
+    if (current != 0) {
+      current--;
+      frame.onload = resolve;
+      setFrame();
+    }
+  });
 }
 
 function nextChapter() {
@@ -45,12 +52,16 @@ function prevChapter() {
 }
 
 btnInc.addEventListener("click", () => {
-  nextImage();
+  if (isImageLoaded) return;
+  isImageLoaded = true;
+  nextImage().then(() => (isImageLoaded = false));
   greyButton();
 });
 
 btnDec.addEventListener("click", () => {
-  previousImage();
+  if (isImageLoaded) return;
+  isImageLoaded = true;
+  previousImage().then(() => (isImageLoaded = false));
   greyButton();
 });
 
