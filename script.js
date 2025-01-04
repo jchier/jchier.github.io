@@ -8,7 +8,7 @@ const btnInc = document.getElementById("increment");
 const btnNext = document.getElementById("next-chapt");
 const btnPrev = document.getElementById("prev-chapt");
 
-let chapterMarks = [0, 64, 127];
+let chapterMarks = [0, 64, 134];
 
 function nextImage() {
   return new Promise((resolve) => {
