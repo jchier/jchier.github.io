@@ -8,25 +8,21 @@ const btnInc = document.getElementById("increment");
 const btnNext = document.getElementById("next-chapt");
 const btnPrev = document.getElementById("prev-chapt");
 
-let chapterMarks = [0, 64, 134];
+let chapterMarks = [0, 64, 134, 197];
 
 function nextImage() {
   return new Promise((resolve) => {
-    if (current < count - 1) {
-      current++;
-      frame.onload = resolve;
-      setFrame();
-    }
+    current++;
+    frame.onload = resolve;
+    setFrame();
   });
 }
 
 function previousImage() {
   return new Promise((resolve) => {
-    if (current != 0) {
-      current--;
-      frame.onload = resolve;
-      setFrame();
-    }
+    current--;
+    frame.onload = resolve;
+    setFrame();
   });
 }
 
@@ -52,17 +48,21 @@ function prevChapter() {
 }
 
 btnInc.addEventListener("click", () => {
-  if (isImageLoaded) return;
-  isImageLoaded = true;
-  nextImage().then(() => (isImageLoaded = false));
-  greyButton();
+  if (current < count - 1) {
+    if (isImageLoaded) return;
+    isImageLoaded = true;
+    nextImage().then(() => (isImageLoaded = false));
+    greyButton();
+  }
 });
 
 btnDec.addEventListener("click", () => {
-  if (isImageLoaded) return;
-  isImageLoaded = true;
-  previousImage().then(() => (isImageLoaded = false));
-  greyButton();
+  if (current != 0) {
+    if (isImageLoaded) return;
+    isImageLoaded = true;
+    previousImage().then(() => (isImageLoaded = false));
+    greyButton();
+  }
 });
 
 btnNext.addEventListener("click", () => {
