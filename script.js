@@ -10,7 +10,7 @@ const btnPrev = document.getElementById("prev-chapt");
 
 let chapterMarks = [0, 64, 134, 197];
 
-let alt;
+let alt = [];
 
 function nextImage() {
   return new Promise((resolve) => {
@@ -79,7 +79,7 @@ btnPrev.addEventListener("click", () => {
 
 function setFrame() {
   frame.src = "./source/" + current + ".png";
-  frame.setAttribute("alt", "lol");
+  frame.setAttribute("alt", alt[count]);
   console.log(current);
 }
 
