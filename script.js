@@ -10,6 +10,8 @@ const btnPrev = document.getElementById("prev-chapt");
 
 let chapterMarks = [0, 64, 134, 197];
 
+let alt;
+
 function nextImage() {
   return new Promise((resolve) => {
     current++;
@@ -97,6 +99,24 @@ async function fetchTextFile() {
   }
 }
 
+async function fetchAltText() {
+  try {
+    const response = await fetch("https://jchier.github.io/alt.txt");
+
+    if (!response.ok) {
+      throw new Error("Network response was not ok " + response.statusText);
+    }
+
+    const text = await response.text();
+    const altLines = text.split("\n");
+    alt.push(...altLines);
+
+    console.log(count);
+  } catch (error) {
+    console.error("Error fetching the text file:", error);
+  }
+}
+
 function greyButton() {
   const isFirstImage = current === 0;
   const isLastImage = current === count - 1;
@@ -125,4 +145,5 @@ function greyButton() {
 }
 
 fetchTextFile();
+fetchAltText();
 greyButton();
