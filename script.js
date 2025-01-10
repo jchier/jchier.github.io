@@ -79,7 +79,7 @@ btnPrev.addEventListener("click", () => {
 
 function setFrame() {
   frame.src = "./source/" + current + ".png";
-  frame.setAttribute("alt", alt[count]);
+  frame.setAttribute("alt", alt[current]);
   console.log(current);
 }
 
