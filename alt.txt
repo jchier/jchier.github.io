@@ -1,68 +1,67 @@
-0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
+CHAPTER 1: An Injustice
+Alex is walking down a road
+Alex notices a masked man with a bag leave a building
+Alex sees the masked man run down the street
+Alex sees an irate store owner come to the door of the building
+The store owner says he was held up by the masked man
+The store owner asks Alex to gab the burglar
+Alex feels a sense of justice
+Alex begins to run down the street
+Alex is chasing the burglar
+The burglar runs into an alleyway
+Alex follows the burglar down the alley
+The burglar is pinned to a fence. Alex asks for his bag
+The burglar throws the bag to Alex
+Alex grabs the bag
+The burglar hops the fence
+Alex is happy he got the bag back while the burglar runs away
+A cop comes down the alley way towards Alex
+He grabs Alex and says he's under arrest
+Alex is hauled off to the cop car
+In the car, Alex yells at the cop while they drive
+The cop car pulls up to the police station
+The cop gets out of the car
+The cop opens the door for Alex and orders him out
+Alex yells at the cop
+The cop punches Alex in the face to shut up
+Alex is knocked out and the cop drags him to the station
+Two more cops open the door for Alex and the cop
+The cop leads Alex into a room
+The room is an interrogation room
+The cop uncuffs Alex
+The cop orders Alex to sit in the chair
+Alex grumbles as he sits in the chair
+An interrogator comes into the interrogation room
+The interrogator asks Alex about the hold up
+Alex insists that he did not do the burglary and that he’s innocent
+The interrogator says that Alex was seen with the bag
+Alex says that the bag was thrown at him
+The interrogator calls Alex a liar, and says that Alex is under arrest
+Two cops, one with a pair of handcuffs come into the room
+Alex begins to swear as the two cops pick Alex up
+Alex is led away from the interrogation room and down the hall
+Alex is fingerprinted
+Alex has his mugshot taken
+Alex is given a jumpsuit to wear
+Alex puts on the jumpsuit
+Alex is led into a prison cell
+In the cell, a cop tells Alex that the judge will see him tomorrow
+The cop slams the cell door
+Alex looks at the cell bars from inside the cell
+Alex lies down and goes to sleep
+The day turns to night
+The night turns to day
+A cop tells Alex that it is time
+Alex gets up
+Alex is led by a judge to the courtroom 
+Alex asks where is the justice in all of this?
+Alex is led down the courtroom to see the judge
+The judge asks Alex if he robbed the store
+Alex says no, he did not rob the store
+The judge remarks that the store owner was shot
+Alex is stunned because he did not know this
+The judge reveals that the store owner was killed in the altercation
+Alex is shocked by this news
 65
 66
 67
@@ -299,3 +298,5 @@
 298
 299
 300
+
+
